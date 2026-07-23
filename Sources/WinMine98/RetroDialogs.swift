@@ -2,12 +2,17 @@ import AppKit
 
 @MainActor
 final class RetroDialogWindow: NSWindow {
-    init(title: String, size: NSSize, content: RetroDialogView) {
-        let frame = NSRect(origin: .zero, size: size)
-        super.init(contentRect: frame, styleMask: .borderless, backing: .buffered, defer: false)
+    init(title: String, size: NSSize, scale: CGFloat = 1, content: RetroDialogView) {
+        let logicalFrame = NSRect(origin: .zero, size: size)
+        let displayFrame = NSRect(
+            origin: .zero,
+            size: NSSize(width: size.width * scale, height: size.height * scale)
+        )
+        super.init(contentRect: displayFrame, styleMask: .borderless, backing: .buffered, defer: false)
         content.titleText = title
-        content.frame = frame
         contentView = content
+        content.frame = displayFrame
+        content.bounds = logicalFrame
         isOpaque = true
         backgroundColor = RetroPalette.face
         hasShadow = true

@@ -3,6 +3,13 @@ import XCTest
 
 @MainActor
 final class GameModelTests: XCTestCase {
+    func testWindowSizePresetsKeepTheOriginalPixelScale() {
+        XCTAssertEqual(WindowSizePreset.small.title, "Small (Original)")
+        XCTAssertEqual(WindowSizePreset.small.scale, 1)
+        XCTAssertEqual(WindowSizePreset.medium.scale, 1.5)
+        XCTAssertEqual(WindowSizePreset.large.scale, 2)
+    }
+
     func testWindows98PresetSizes() {
         let model = GameModel()
 

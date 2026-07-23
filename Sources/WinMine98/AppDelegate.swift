@@ -2,9 +2,37 @@ import AppKit
 import CoreText
 
 @MainActor
+private final class ScaledGameContainerView: NSView {
+    let gameView: WinMineView
+
+    init(gameView: WinMineView) {
+        self.gameView = gameView
+        super.init(frame: .zero)
+        addSubview(gameView)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layout() {
+        super.layout()
+        gameView.frame = bounds
+        gameView.bounds = NSRect(origin: .zero, size: gameView.preferredSize)
+    }
+
+    func refreshLogicalSize() {
+        needsLayout = true
+        layoutSubtreeIfNeeded()
+        gameView.needsDisplay = true
+    }
+}
+
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private var window: NSWindow?
     private var gameView: WinMineView?
+    private var gameContainer: ScaledGameContainerView?
     private let model = GameModel()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -13,7 +41,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         configureMainMenu()
 
         let view = WinMineView(model: model)
-        let size = view.preferredSize
+        let logicalSize = view.preferredSize
+        let size = scaledSize(logicalSize, by: view.windowSizePreset.scale)
         let screen = NSScreen.main?.visibleFrame ?? NSRect(x: 0, y: 0, width: 1280, height: 800)
         let origin = NSPoint(
             x: floor(screen.midX - size.width / 2),
@@ -25,23 +54,28 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             backing: .buffered,
             defer: false
         )
+        let container = ScaledGameContainerView(gameView: view)
         window.isOpaque = true
         window.backgroundColor = RetroPalette.face
         window.hasShadow = true
         window.isMovableByWindowBackground = false
         window.acceptsMouseMovedEvents = true
         window.delegate = self
-        window.contentView = view
+        window.contentView = container
+        container.refreshLogicalSize()
         window.title = "Minesweeper"
-        window.setFrameAutosaveName("WinMine98MainWindow")
         window.makeKeyAndOrderFront(nil)
         window.makeFirstResponder(view)
 
         view.requestResize = { [weak self] in
             self?.resizeWindowForGame()
         }
+        view.requestWindowScale = { [weak self] scale in
+            self?.resizeWindowForGame(interfaceScale: scale)
+        }
         self.window = window
         self.gameView = view
+        self.gameContainer = container
 
         NSApp.activate(ignoringOtherApps: true)
     }
@@ -73,9 +107,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
     }
 
-    private func resizeWindowForGame() {
+    private func resizeWindowForGame(interfaceScale requestedScale: CGFloat? = nil) {
         guard let window, let view = gameView else { return }
-        let newSize = view.preferredSize
+        let oldLogicalWidth = max(view.bounds.width, 1)
+        let currentScale = max(view.frame.width / oldLogicalWidth, 1)
+        let interfaceScale = requestedScale ?? currentScale
+        let newLogicalSize = view.preferredSize
+        let newSize = scaledSize(newLogicalSize, by: interfaceScale)
         let oldFrame = window.frame
         let newFrame = NSRect(
             x: oldFrame.minX,
@@ -84,9 +122,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             height: newSize.height
         )
         window.setFrame(newFrame, display: true, animate: false)
-        view.frame = NSRect(origin: .zero, size: newSize)
-        view.needsDisplay = true
+        gameContainer?.refreshLogicalSize()
         window.makeFirstResponder(view)
+    }
+
+    private func scaledSize(_ size: NSSize, by scale: CGFloat) -> NSSize {
+        NSSize(width: size.width * scale, height: size.height * scale)
     }
 
     private func configureMainMenu() {

@@ -1,5 +1,29 @@
 import AppKit
 
+enum WindowSizePreset: String, CaseIterable {
+    case small
+    case medium
+    case large
+
+    static let defaultsKey = "window.sizePreset"
+
+    var title: String {
+        switch self {
+        case .small: "Small (Original)"
+        case .medium: "Medium"
+        case .large: "Large"
+        }
+    }
+
+    var scale: CGFloat {
+        switch self {
+        case .small: 1
+        case .medium: 1.5
+        case .large: 2
+        }
+    }
+}
+
 @MainActor
 final class WinMineView: NSView {
     static let cellSize: CGFloat = 16
@@ -8,6 +32,8 @@ final class WinMineView: NSView {
 
     let model: GameModel
     var requestResize: (() -> Void)?
+    var requestWindowScale: ((CGFloat) -> Void)?
+    private(set) var windowSizePreset: WindowSizePreset
 
     private var leftDown = false
     private var rightDown = false
@@ -50,9 +76,15 @@ final class WinMineView: NSView {
         )
     }
     private var gridOrigin: NSPoint { NSPoint(x: 13, y: 91) }
+    private var interfaceScale: CGFloat {
+        guard bounds.width > 0 else { return 1 }
+        return max(frame.width / bounds.width, 1)
+    }
 
     init(model: GameModel) {
         self.model = model
+        let savedPreset = UserDefaults.standard.string(forKey: WindowSizePreset.defaultsKey)
+        self.windowSizePreset = savedPreset.flatMap(WindowSizePreset.init(rawValue:)) ?? .medium
         super.init(frame: .zero)
         model.onChange = { [weak self] in
             self?.needsDisplay = true
@@ -432,9 +464,23 @@ final class WinMineView: NSView {
         requestResize?()
     }
 
+    private func chooseWindowSize(_ preset: WindowSizePreset) {
+        guard preset != windowSizePreset else { return }
+        windowSizePreset = preset
+        UserDefaults.standard.set(preset.rawValue, forKey: WindowSizePreset.defaultsKey)
+        requestWindowScale?(preset.scale)
+    }
+
     private func showGameMenu() {
         closeMenu()
         let current = model.difficulty
+        let windowSizeItems = WindowSizePreset.allCases.map { preset in
+            RetroMenuItem(
+                title: preset.title,
+                checked: windowSizePreset == preset,
+                action: { [weak self] in self?.chooseWindowSize(preset) }
+            )
+        }
         let items = [
             RetroMenuItem(title: "New", shortcut: "F2", action: { [weak self] in self?.restartCurrentGame() }),
             .line(),
@@ -453,6 +499,7 @@ final class WinMineView: NSView {
                 self.model.colorsEnabled.toggle()
                 self.needsDisplay = true
             }),
+            RetroMenuItem(title: "Window Size", submenu: windowSizeItems),
             .line(),
             RetroMenuItem(title: "Best Times...", action: { [weak self] in self?.showBestTimes() }),
             .line(),
@@ -471,7 +518,11 @@ final class WinMineView: NSView {
 
     private func showMenu(items: [RetroMenuItem], under rect: NSRect, width: CGFloat) {
         guard let parentWindow = window else { return }
-        let menu = RetroMenuWindow(items: items, width: width) { [weak self, weak parentWindow] in
+        let menu = RetroMenuWindow(
+            items: items,
+            width: width,
+            scale: interfaceScale
+        ) { [weak self, weak parentWindow] in
             guard let self else { return }
             if let activeMenu = self.menuWindow {
                 parentWindow?.removeChildWindow(activeMenu)
@@ -496,7 +547,7 @@ final class WinMineView: NSView {
         if let menuWindow, let parent = menuWindow.parent {
             parent.removeChildWindow(menuWindow)
         }
-        menuWindow?.orderOut(nil)
+        menuWindow?.orderOutMenuTree()
         menuWindow = nil
     }
 
@@ -554,14 +605,16 @@ final class WinMineView: NSView {
     private func showDialog(title: String, size: NSSize, content: RetroDialogView) {
         dismissDialog()
         guard let parent = window else { return }
-        let dialog = RetroDialogWindow(title: title, size: size, content: content)
+        let scale = interfaceScale
+        let displaySize = NSSize(width: size.width * scale, height: size.height * scale)
+        let dialog = RetroDialogWindow(title: title, size: size, scale: scale, content: content)
         content.closeHandler = { [weak self] in
             self?.dismissDialog()
         }
         let parentFrame = parent.frame
         let origin = NSPoint(
-            x: floor(parentFrame.midX - size.width / 2),
-            y: floor(parentFrame.midY - size.height / 2)
+            x: floor(parentFrame.midX - displaySize.width / 2),
+            y: floor(parentFrame.midY - displaySize.height / 2)
         )
         dialog.setFrameOrigin(origin)
         parent.addChildWindow(dialog, ordered: .above)
