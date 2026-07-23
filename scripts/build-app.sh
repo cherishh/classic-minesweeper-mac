@@ -25,8 +25,8 @@ mkdir -p "$resources_dir/Fonts"
 cp "$project_dir/Resources/Fonts/"*.ttf "$resources_dir/Fonts/"
 
 mkdir -p "$iconset_dir"
-qlmanage -t -s 1024 -o "$project_dir/.build" "$project_dir/Resources/AppIcon.svg" >/dev/null 2>&1
-source_png="$project_dir/.build/AppIcon.svg.png"
+sips -s format png "$project_dir/Resources/AppIcon.svg" --out "$project_dir/.build/AppIcon.png" >/dev/null
+source_png="$project_dir/.build/AppIcon.png"
 for spec in \
     "16 icon_16x16.png" \
     "32 icon_16x16@2x.png" \

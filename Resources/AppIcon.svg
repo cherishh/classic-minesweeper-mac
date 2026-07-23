@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" shape-rendering="crispEdges">
-  <rect width="1024" height="1024" fill="#c0c0c0"/>
-  <path fill="#fff" d="M0 0h1024v32H0zM0 0h32v1024H0z"/>
-  <path fill="#000" d="M0 992h1024v32H0zM992 0h32v1024h-32z"/>
-  <path fill="#808080" d="M32 960h928v32H32zM960 32h32v928h-32z"/>
-  <rect x="160" y="160" width="704" height="704" fill="#c0c0c0"/>
-  <path fill="#000" d="M416 224h192v64H416zM416 736h192v64H416zM224 416h64v192h-64zM736 416h64v192h-64z"/>
-  <path fill="#000" d="M320 288h96v96h-96zM608 288h96v96h-96zM320 640h96v96h-96zM608 640h96v96h-96z"/>
-  <rect x="320" y="320" width="384" height="384" fill="#000"/>
-  <rect x="384" y="384" width="256" height="256" fill="#404040"/>
-  <rect x="416" y="416" width="80" height="80" fill="#fff"/>
-  <rect x="608" y="192" width="64" height="160" fill="#000"/>
-  <path fill="#f00" d="M384 128h224v160H384zM384 128l-128 80 128 80z"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024"
+     height="1024"
+     viewBox="0 0 32 32"
+     shape-rendering="crispEdges">
+  <title>Classic Minesweeper application icon</title>
+  <desc>A pixel-art mine with a lit fuse, recreated in the Windows 98 palette.</desc>
+  <path fill="#000" d="M15 2h2v1h-2zM14 3h1v1h-1zM16 3h2v1h-2zM14 4h1v1h-1zM16 4h2v1h-2zM12 5h8v1h-8zM6 6h2v1h-2zM10 6h2v1h-2zM20 6h2v1h-2zM24 6h2v1h-2zM5 7h2v1h-2zM8 7h2v1h-2zM22 7h2v1h-2zM25 7h2v1h-2zM5 8h4v1h-4zM22 8h5v1h-5zM6 9h2v1h-2zM23 9h3v1h-3zM6 10h1v1h-1zM23 10h3v1h-3zM6 11h1v1h-1zM20 11h1v1h-1zM23 11h3v1h-3zM5 12h1v1h-1zM22 12h1v1h-1zM24 12h3v1h-3zM5 13h1v1h-1zM14 13h3v1h-3zM24 13h3v1h-3zM3 14h3v1h-3zM13 14h1v1h-1zM17 14h1v1h-1zM22 14h1v1h-1zM24 14h5v1h-5zM2 15h1v1h-1zM5 15h1v1h-1zM13 15h1v1h-1zM17 15h2v1h-2zM20 15h1v1h-1zM23 15h4v1h-4zM29 15h1v1h-1zM2 16h4v1h-4zM13 16h1v1h-1zM16 16h4v1h-4zM21 16h1v1h-1zM23 16h7v1h-7zM3 17h3v1h-3zM14 17h6v1h-6zM22 17h1v1h-1zM24 17h5v1h-5zM5 18h2v1h-2zM15 18h6v1h-6zM22 18h5v1h-5zM5 19h2v1h-2zM11 19h1v1h-1zM13 19h1v1h-1zM15 19h5v1h-5zM21 19h1v1h-1zM23 19h4v1h-4zM6 20h2v1h-2zM9 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM17 20h2v1h-2zM20 20h6v1h-6zM6 21h3v1h-3zM10 21h2v1h-2zM13 21h1v1h-1zM15 21h1v1h-1zM18 21h2v1h-2zM21 21h5v1h-5zM7 22h4v1h-4zM12 22h2v1h-2zM15 22h10v1h-10zM7 23h18v1h-18zM6 24h1v1h-1zM8 24h16v1h-16zM25 24h1v1h-1zM6 25h20v1h-20zM7 26h2v1h-2zM12 26h8v1h-8zM23 26h2v1h-2zM14 27h2v1h-2zM17 27h1v1h-1zM14 28h2v1h-2zM17 28h1v1h-1zM15 29h2v1h-2z"/>
+  <path fill="#808080" d="M14 8h1v1h-1zM18 8h1v1h-1zM13 9h1v1h-1zM20 9h1v1h-1zM20 10h2v1h-2zM13 11h2v1h-2zM17 11h2v1h-2zM21 11h1v1h-1zM9 12h1v1h-1zM12 12h8v1h-8zM21 12h1v1h-1zM23 12h1v1h-1zM11 13h1v1h-1zM17 13h7v1h-7zM9 14h1v1h-1zM11 14h2v1h-2zM16 14h1v1h-1zM18 14h4v1h-4zM23 14h1v1h-1zM8 15h1v1h-1zM10 15h3v1h-3zM16 15h1v1h-1zM19 15h1v1h-1zM21 15h2v1h-2zM27 15h2v1h-2zM11 16h2v1h-2zM14 16h2v1h-2zM20 16h1v1h-1zM22 16h1v1h-1zM11 17h3v1h-3zM20 17h2v1h-2zM23 17h1v1h-1zM10 18h5v1h-5zM21 18h1v1h-1zM7 19h1v1h-1zM10 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM20 19h1v1h-1zM22 19h1v1h-1zM8 20h1v1h-1zM10 20h2v1h-2zM13 20h1v1h-1zM15 20h2v1h-2zM19 20h1v1h-1zM9 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM16 21h2v1h-2zM20 21h1v1h-1zM11 22h1v1h-1zM14 22h1v1h-1zM7 24h1v1h-1zM24 24h1v1h-1zM16 27h1v1h-1zM16 28h1v1h-1z"/>
+  <path fill="#c0c0c0" d="M17 6h3v1h-3zM14 7h1v1h-1zM17 7h1v1h-1zM20 7h2v1h-2zM11 8h3v1h-3zM16 8h2v1h-2zM19 8h3v1h-3zM10 9h1v1h-1zM14 9h6v1h-6zM21 9h2v1h-2zM11 10h9v1h-9zM22 10h1v1h-1zM8 11h5v1h-5zM15 11h2v1h-2zM19 11h1v1h-1zM22 11h1v1h-1zM8 12h1v1h-1zM10 12h2v1h-2zM20 12h1v1h-1zM7 13h1v1h-1zM10 13h1v1h-1zM12 13h2v1h-2zM6 14h2v1h-2zM10 14h1v1h-1zM9 15h1v1h-1zM6 16h1v1h-1zM9 16h2v1h-2zM6 17h1v1h-1zM8 17h3v1h-3zM7 18h3v1h-3zM8 19h2v1h-2z"/>
+  <path fill="#fff" d="M15 3h1v1h-1zM15 4h1v1h-1zM12 6h5v1h-5zM7 7h1v1h-1zM10 7h4v1h-4zM15 7h2v1h-2zM18 7h2v1h-2zM24 7h1v1h-1zM9 8h2v1h-2zM15 8h1v1h-1zM8 9h2v1h-2zM11 9h2v1h-2zM7 10h4v1h-4zM7 11h1v1h-1zM6 12h2v1h-2zM6 13h1v1h-1zM8 13h2v1h-2zM8 14h1v1h-1zM14 14h2v1h-2zM3 15h2v1h-2zM6 15h2v1h-2zM14 15h2v1h-2zM7 16h2v1h-2zM7 17h1v1h-1z"/>
 </svg>
