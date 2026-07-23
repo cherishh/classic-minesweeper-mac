@@ -1,0 +1,16 @@
+WinMine 98 is an independent, native recreation created for this project.
+No Microsoft binaries or sound files are included.
+
+The fixed Windows 98 window samples were derived from the reference image
+provided by the user for this project.
+
+Number, mine, question-mark, and alternate face glyphs are adapted from the
+MIT-licensed AlexAegis/minesweeper project. Its complete license is included
+as AlexAegis-Minesweeper-LICENSE.txt.
+
+The pixelated MS Sans Serif and MS Sans Serif Bold typefaces are FontStruct
+recreations by "lou", distributed under Creative Commons Attribution-
+ShareAlike 3.0. Their license notices are included alongside this file.
+
+Windows and Minesweeper are trademarks of Microsoft Corporation. This project
+is not affiliated with or endorsed by Microsoft.
