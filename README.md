@@ -6,49 +6,45 @@ Requires **macOS 13+** and **Apple Silicon** (M1 / M2 / M3 / M4…).
 
 ## Download & open（下载后如何打开）
 
-GitHub 上的安装包未经过 Apple 公证，首次打开时系统会提示无法验证。
+安装包未做 Apple 公证。双击时可能弹出 *“Minesweeper” Not Opened*，按钮只有 **Move to Trash** / **Done**。
 
-> **注意：** 在较新的 macOS（Sonoma / Sequoia 及以后）上，**右键 → 打开 无效**，仍会只出现 *Move to Trash / Done*。请用下面两种方式之一。
+**右键 → 打开在新系统上无效**，请用下面方法。
 
-### 方法一：终端（最省事、最稳）
+### 推荐：终端一条命令
 
-下载并解压后，在「终端」执行（路径按实际位置改）：
-
-```sh
-xattr -cr ~/Downloads/Minesweeper.app
-open ~/Downloads/Minesweeper.app
-```
-
-若 app 在「下载」以外的文件夹，把路径换成真实位置，例如：
-
-```sh
-xattr -cr ~/Desktop/Minesweeper.app && open ~/Desktop/Minesweeper.app
-```
-
-`xattr -cr` 会去掉下载隔离标记，之后即可正常双击打开。
-
-### 方法二：系统设置
-
-1. 双击 `Minesweeper.app`
-2. 弹出 **“Minesweeper” Not Opened** 时，点 **Done / 完成**（**不要**点 Move to Trash）
-3. 打开 **系统设置 → 隐私与安全性**
-4. 向下滚动，找到刚出现的 **“Minesweeper”已被阻止使用**（或类似文案）
-5. 点 **仍要打开** → 再确认 **打开**
-
-若设置里暂时看不到该提示：再双击一次 app → 再点 **Done**，然后立刻回到「隐私与安全性」查看。
-
----
-
-If macOS says *“Apple could not verify Minesweeper”*:
-
-**Right-click → Open no longer works** on recent macOS. Use:
+1. 下载并解压，得到 `Minesweeper.app`
+2. 打开 **终端**，执行（把路径改成你的实际位置）：
 
 ```sh
 xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app
 ```
 
-Or: click **Done** → **System Settings → Privacy & Security** → **Open Anyway**.
-## Controls
+例子：
+
+| app 位置 | 命令 |
+|----------|------|
+| 下载文件夹 | `xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app` |
+| 桌面 | `xattr -cr ~/Desktop/Minesweeper.app && open ~/Desktop/Minesweeper.app` |
+
+做完一次后，以后可以正常双击打开。
+
+### 备选：系统设置
+
+1. 双击 app → 点 **Done / 完成**（不要点 Move to Trash）
+2. **系统设置 → 隐私与安全性** → 往下滚
+3. 找到 **“Minesweeper”已被阻止** → **仍要打开** → **打开**
+
+设置里暂时没有该项时：再双击一次 app → 点 Done，马上回到该页面。
+
+---
+
+**English:** Right-click → Open does **not** work on recent macOS. Run:
+
+```sh
+xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app
+```
+
+Or: **Done** → **System Settings → Privacy & Security** → **Open Anyway**.## Controls
 
 - Left click: uncover a square
 - Right click: flag / question / clear
