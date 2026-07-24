@@ -6,41 +6,48 @@ Requires **macOS 13+** and **Apple Silicon** (M1 / M2 / M3 / M4…).
 
 ## Download & open（下载后如何打开）
 
-GitHub 上的安装包未经过 Apple 公证，首次打开时系统会提示无法验证。按下面任选一种方式即可。
+GitHub 上的安装包未经过 Apple 公证，首次打开时系统会提示无法验证。
 
-### 方法一：系统设置（推荐，macOS Sonoma / Sequoia）
+> **注意：** 在较新的 macOS（Sonoma / Sequoia 及以后）上，**右键 → 打开 无效**，仍会只出现 *Move to Trash / Done*。请用下面两种方式之一。
 
-1. 下载并解压，得到 `Minesweeper.app`
-2. 双击打开；若弹出 **“Minesweeper” Not Opened** / **无法打开**，点 **Done** / **完成**（不要点 Move to Trash）
-3. 打开 **系统设置 → 隐私与安全性**
-4. 向下滚动，找到 **“Minesweeper”已被阻止使用**
-5. 点 **仍要打开** → 再确认一次 **打开**
+### 方法一：终端（最省事、最稳）
 
-以后再开就不会再拦。
-
-### 方法二：右键打开
-
-1. 在 Finder 中 **按住 Control 点击**（或右键）`Minesweeper.app`
-2. 选择 **打开**
-3. 在对话框中再点 **打开**
-
-### 方法三：终端（一次搞定）
-
-把路径换成你实际的解压位置：
+下载并解压后，在「终端」执行（路径按实际位置改）：
 
 ```sh
 xattr -cr ~/Downloads/Minesweeper.app
 open ~/Downloads/Minesweeper.app
 ```
 
+若 app 在「下载」以外的文件夹，把路径换成真实位置，例如：
+
+```sh
+xattr -cr ~/Desktop/Minesweeper.app && open ~/Desktop/Minesweeper.app
+```
+
+`xattr -cr` 会去掉下载隔离标记，之后即可正常双击打开。
+
+### 方法二：系统设置
+
+1. 双击 `Minesweeper.app`
+2. 弹出 **“Minesweeper” Not Opened** 时，点 **Done / 完成**（**不要**点 Move to Trash）
+3. 打开 **系统设置 → 隐私与安全性**
+4. 向下滚动，找到刚出现的 **“Minesweeper”已被阻止使用**（或类似文案）
+5. 点 **仍要打开** → 再确认 **打开**
+
+若设置里暂时看不到该提示：再双击一次 app → 再点 **Done**，然后立刻回到「隐私与安全性」查看。
+
 ---
 
 If macOS says *“Apple could not verify Minesweeper”*:
 
-1. Click **Done** (not Move to Trash)
-2. **System Settings → Privacy & Security** → scroll down → **Open Anyway**
-3. Or Control-click the app → **Open** → **Open**
+**Right-click → Open no longer works** on recent macOS. Use:
 
+```sh
+xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app
+```
+
+Or: click **Done** → **System Settings → Privacy & Security** → **Open Anyway**.
 ## Controls
 
 - Left click: uncover a square
