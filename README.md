@@ -4,47 +4,20 @@ A native Apple Silicon recreation of the Windows 98 edition of Minesweeper.
 
 Requires **macOS 13+** and **Apple Silicon** (M1 / M2 / M3 / M4…).
 
-## Download & open（下载后如何打开）
+## Download & open（下载与运行）
 
-安装包未做 Apple 公证。双击时可能弹出 *“Minesweeper” Not Opened*，按钮只有 **Move to Trash** / **Done**。
+从 [GitHub Releases](https://github.com/cherishh/classic-minesweeper-mac/releases/latest)
+下载 `Minesweeper-macOS-arm64.zip`，解压后双击 `Minesweeper.app` 即可。
 
-**右键 → 打开在新系统上无效**，请用下面方法。
+发布包已经过 **Developer ID 签名和 Apple 公证**，并通过 Gatekeeper
+验证，不再需要运行 `xattr` 命令，也不会再出现 **Move to Trash** 提示。
+首次启动时，macOS 仍可能显示标准的“从互联网下载”确认框，点击
+**Open / 打开** 即可。
 
-### 推荐：终端一条命令
+**English:** The release is Developer ID signed and Apple-notarized. Download,
+unzip, and double-click `Minesweeper.app`; no Terminal workaround is required.
 
-1. 下载并解压，得到 `Minesweeper.app`
-2. 打开 **终端**，执行（把路径改成你的实际位置）：
-
-```sh
-xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app
-```
-
-例子：
-
-| app 位置 | 命令 |
-|----------|------|
-| 下载文件夹 | `xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app` |
-| 桌面 | `xattr -cr ~/Desktop/Minesweeper.app && open ~/Desktop/Minesweeper.app` |
-
-做完一次后，以后可以正常双击打开。
-
-### 备选：系统设置
-
-1. 双击 app → 点 **Done / 完成**（不要点 Move to Trash）
-2. **系统设置 → 隐私与安全性** → 往下滚
-3. 找到 **“Minesweeper”已被阻止** → **仍要打开** → **打开**
-
-设置里暂时没有该项时：再双击一次 app → 点 Done，马上回到该页面。
-
----
-
-**English:** Right-click → Open does **not** work on recent macOS. Run:
-
-```sh
-xattr -cr ~/Downloads/Minesweeper.app && open ~/Downloads/Minesweeper.app
-```
-
-Or: **Done** → **System Settings → Privacy & Security** → **Open Anyway**.## Controls
+## Controls
 
 - Left click: uncover a square
 - Right click: flag / question / clear
@@ -62,6 +35,7 @@ chrome remains faithful to Windows 98 rather than adopting macOS window styling.
 
 Output: `dist/Minesweeper.app`. Needs macOS 13+, Apple Silicon, and Xcode CLT.
 
-Signing / notarization notes (when you renew Developer Program membership): [docs/SIGNING.md](docs/SIGNING.md).
+Release builds are Developer ID signed and Apple-notarized. See
+[docs/SIGNING.md](docs/SIGNING.md) for the release process.
 
 Created by [tuxi](https://tuxi.dev).
