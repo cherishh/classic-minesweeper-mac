@@ -33,6 +33,4 @@ chrome remains faithful to Windows 98 rather than adopting macOS window styling.
 
 Output: `dist/Minesweeper.app`. Needs macOS 13+, Apple Silicon, and Xcode CLT.
 
-Distribution guide: [Signing and notarization](docs/SIGNING.md).
-
 Created by [tuxi](https://tuxi.dev).

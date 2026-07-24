@@ -5,11 +5,11 @@
 #   ./scripts/build-app.sh
 #
 # Signed for distribution (Developer ID Application):
-#   export SIGN_IDENTITY="Developer ID Application: Zhongxi Wang (TEAMID)"
+#   export SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)"
 #   ./scripts/build-app.sh
 #
 # Sign + notarize + staple (required so Gatekeeper accepts downloads):
-#   export SIGN_IDENTITY="Developer ID Application: Zhongxi Wang (TEAMID)"
+#   export SIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)"
 #   export NOTARY_PROFILE="minesweeper-notary"   # from: xcrun notarytool store-credentials
 #   export NOTARIZE=1
 #   ./scripts/build-app.sh
