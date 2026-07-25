@@ -25,6 +25,21 @@ Click **Open** if macOS shows a first-launch confirmation.
 The app uses an entirely custom-drawn, borderless AppKit window so the visible
 chrome remains faithful to Windows 98 rather than adopting macOS window styling.
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/images/winmine98-poster.png" alt="WinMine 98 for macOS" width="480">
+</p>
+
+<p align="center">
+  <img src="docs/images/best-time-dialog.png" alt="Best time dialog" width="46%">
+  <img src="docs/images/game-over.png" alt="Game over" width="30%">
+</p>
+
+<p align="center">
+  <img src="docs/images/game-menu.png" alt="Game menu" width="420">
+</p>
+
 ## Build from source
 
 ```sh
