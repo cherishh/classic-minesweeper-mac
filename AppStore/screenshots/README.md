@@ -1,8 +1,10 @@
 # Screenshot production
 
-> Status: the original draft is rejected. The preferred Chinese first and last images are under `candidates/editorial-set-v4/`. Pages 02–04 are awaiting copy selection, and the former dedicated Expert page is removed. Do not upload the candidate set before approval.
+> Status: the complete bilingual five-image preview is under `candidates/full-preview-v6/` and is ready for visual approval. Do not upload it before approval.
 
 ## Replacement candidate
+
+`candidates/full-preview-v6/` contains the current ordered English and Simplified Chinese sets, plus one contact sheet per localization. Both sequences contain five images: Beginner cover, failure, victory, open menu, and CTA. The former dedicated Expert page is removed.
 
 The preferred Chinese candidates are `candidates/editorial-set-v4/zh-Hans/01.png` and `05.png`. The first image adapts the supplied portrait artwork into the required 16:10 format without a teal presentation frame and uses a real Beginner state with one flag placed. The fifth image replaces both the former Expert page and the old feature-summary ending with a smiley-led CTA.
 

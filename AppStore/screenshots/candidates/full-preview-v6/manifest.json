@@ -1,0 +1,21 @@
+{
+  "status": "full-preview-candidate",
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "aspectRatio": "16:10",
+  "alpha": false,
+  "sequenceLength": 5,
+  "localizations": {
+    "en-US": ["01.png", "02.png", "03.png", "04.png", "05.png"],
+    "zh-Hans": ["01.png", "02.png", "03.png", "04.png", "05.png"]
+  },
+  "states": {
+    "cover": "Beginner with one flag",
+    "failure": "02.png",
+    "victory": "03.png",
+    "openMenu": "04.png",
+    "cta": "05.png"
+  },
+  "removedPage": "dedicated advanced-mode page"
+}
