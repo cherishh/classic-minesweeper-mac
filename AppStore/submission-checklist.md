@@ -1,6 +1,7 @@
 # App Store Connect submission
 
-- App name: `Classic Minesweeper 98`
+- App name (English): `Minesweeper Classic: 98`
+- App name (Simplified Chinese): `扫雷 98经典`
 - Apple ID: `6794762581`
 - Platform: macOS
 - Bundle ID: `dev.tuxi.classicminesweeper`
@@ -23,5 +24,4 @@
 ## Remaining actions
 
 1. Replace the rejected screenshot draft with the final store artwork.
-2. Add the private App Review contact name, phone number, and email address.
-3. Submit the completed version for review.
+2. Submit the completed version for review.
