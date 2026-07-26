@@ -11,9 +11,9 @@
     "zh-Hans": ["01.png", "02.png", "03.png", "04.png", "05.png"]
   },
   "changesFromV6": {
-    "en-US/01.png": "clean one-flag product capture without cursor artifact",
+    "en-US/01.png": "clean one-flag capture; flag at row 3, third cell from right",
     "en-US/03.png": "all features are genuinely functional copy",
-    "zh-Hans/01.png": "clean one-flag product capture without cursor artifact",
+    "zh-Hans/01.png": "clean one-flag capture; flag at row 3, third cell from right",
     "zh-Hans/02.png": "new Win98 window-elements copy",
     "zh-Hans/03.png": "all features are genuinely functional copy",
     "zh-Hans/04.png": "new jagged-text nostalgia copy",

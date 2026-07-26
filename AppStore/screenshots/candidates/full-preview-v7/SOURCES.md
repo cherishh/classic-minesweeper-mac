@@ -1,6 +1,6 @@
 # Full preview v7
 
-- English and Chinese 01 use the cleaned one-flag product capture with no computer-use cursor artifact.
+- English and Chinese 01 use the cleaned product capture with one flag at row 3, third cell from the right, and no computer-use cursor artifact.
 - English 03 mirrors the Chinese functional-product claim with `Every feature actually works.`
 - Chinese 02 uses the requested `原汁原味的 Win98 窗口元素` headline.
 - Chinese 03 uses the requested `所有功能均真实可用` headline.

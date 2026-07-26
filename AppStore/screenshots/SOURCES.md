@@ -2,11 +2,11 @@
 
 ## Product captures
 
-The interface images in `source/` were captured from the same `WinMine98` AppKit target used for the Release archive. Most use Debug-only starting-state selection; the one-flag image was captured by interacting with the packaged app directly. Its computer-use cursor artifact was removed deterministically by restoring the covered cell from an identical neighboring cell and overlaying the exact shipping `flag.png` asset. No other UI pixels were changed.
+The interface images in `source/` were captured from the same `WinMine98` AppKit target used for the Release archive. Most use Debug-only starting-state selection; the one-flag image was captured by interacting with the packaged app directly. Its computer-use cursor artifact was removed deterministically by restoring the covered cell from an identical neighboring cell and placing the exact shipping `flag.png` asset at row 3, column 6—the third cell from the right. No other UI pixels were changed.
 
 - `beginner-ready-large.png`: real Beginner board, Large interface scale.
 - `beginner-playing-large.png`: real Beginner board after valid reveal and mark actions.
-- `beginner-one-flag-large.png`: packaged app in a real Beginner state with one flag placed and `009` mines remaining, Large interface scale; cursor artifact removed as described above.
+- `beginner-one-flag-large.png`: packaged app in a real Beginner state with one flag at row 3, column 6 and `009` mines remaining, Large interface scale; cursor artifact removed as described above.
 - `intermediate-ready-large.png`: real Intermediate board, Large interface scale.
 - `intermediate-playing-large.png`: real Intermediate board after valid reveal and mark actions.
 - `expert-ready-large.png`: real Expert board, Large interface scale.
