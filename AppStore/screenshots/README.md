@@ -1,5 +1,7 @@
 # Screenshot production
 
+> Status: draft rejected on 2026-07-26. Do not submit this set for review; it remains only as source material for the next visual pass.
+
 Final exports are 2880 × 1800 PNG files with no alpha channel. Every app interface shown in an export comes from a real capture of the Xcode app target. Marketing copy and the `#008080` default desktop background are composited deterministically.
 
 ## Recommended submission set

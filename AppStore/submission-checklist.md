@@ -1,6 +1,7 @@
 # App Store Connect submission
 
-- App name: `Classic Minesweeper`
+- App name: `Classic Minesweeper 98`
+- Apple ID: `6794762581`
 - Platform: macOS
 - Bundle ID: `dev.tuxi.classicminesweeper`
 - SKU: `classic-minesweeper-macos`
