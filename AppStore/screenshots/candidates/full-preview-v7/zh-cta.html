@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>扫雷 98经典 — 中文末图</title>
+  <link rel="stylesheet" href="../win98-cta-v5/vendor/98.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #111; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+    .shot {
+      position: relative;
+      width: 2880px;
+      height: 1800px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        #008080;
+      background-size: 64px 64px, 64px 64px, 100% 100%;
+    }
+    .desktop-meta {
+      position: absolute;
+      left: 150px;
+      right: 150px;
+      top: 95px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,.84);
+      font: 700 28px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .desktop-meta::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 58px;
+      height: 2px;
+      background: rgba(255,255,255,.36);
+    }
+    .desktop-icon {
+      position: absolute;
+      left: 165px;
+      top: 245px;
+      z-index: 2;
+      width: 180px;
+      text-align: center;
+      color: #fff;
+      font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+      font-size: 30px;
+      line-height: 1.25;
+      text-shadow: 2px 2px #000;
+    }
+    .desktop-icon img {
+      display: block;
+      width: 96px;
+      margin: 0 auto 20px;
+      image-rendering: pixelated;
+    }
+    .window-position {
+      position: absolute;
+      z-index: 3;
+      left: 490px;
+      top: 280px;
+      width: 1020px;
+      transform: scale(1.84);
+      transform-origin: top left;
+      filter: drop-shadow(18px 22px 0 rgba(0,0,0,.32));
+    }
+    .dialog-window { width: 1020px; }
+    .dialog-window .title-bar { min-height: 35px; }
+    .dialog-window .title-bar-text { font-size: 18px; }
+    .dialog-window .title-bar-controls button {
+      min-width: 25px;
+      min-height: 22px;
+      background-size: 12px auto;
+    }
+    .dialog-window .window-body { margin: 16px; }
+    .cta-panel {
+      position: relative;
+      min-height: 530px;
+      padding: 50px 58px 42px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      column-gap: 52px;
+      align-items: center;
+      background: #fff;
+    }
+    .smiley-wrap {
+      width: 250px;
+      height: 250px;
+      display: grid;
+      place-items: center;
+      background: #c0c0c0;
+      box-shadow: inset -3px -3px #0a0a0a, inset 3px 3px #fff, inset -6px -6px grey, inset 6px 6px #dfdfdf;
+    }
+    .smiley {
+      width: 188px;
+      image-rendering: pixelated;
+    }
+    .copy { align-self: center; }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: #000080;
+      font: 700 18px/1 "Pixelated MS Sans Serif", Arial, sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font-size: 88px;
+      font-weight: 560;
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .sub {
+      margin: 28px 0 0;
+      max-width: 540px;
+      color: #454545;
+      font: 400 25px/1.35 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+    }
+    .choice {
+      grid-column: 1 / -1;
+      margin-top: 44px;
+      padding-top: 30px;
+      border-top: 1px solid #9b9b9b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hint {
+      color: #444;
+      font: 700 17px/1 "Pixelated MS Sans Serif", Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    .buttons { display: flex; gap: 14px; }
+    .buttons button {
+      min-width: 138px;
+      min-height: 50px;
+      color: transparent;
+      font-size: 23px;
+    }
+    .status-bar { margin: 10px 16px 14px; }
+    .status-bar-field {
+      min-height: 30px;
+      padding: 7px 10px;
+      color: #333;
+      font-size: 14px;
+      text-align: center;
+    }
+    .taskbar {
+      position: absolute;
+      z-index: 6;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 116px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #c0c0c0;
+      box-shadow: inset 0 4px #fff, inset 0 7px #dfdfdf;
+      font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    }
+    .start,
+    .task,
+    .tray {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      background: #c0c0c0;
+      box-shadow: inset -3px -3px #0a0a0a, inset 3px 3px #fff, inset -6px -6px grey, inset 6px 6px #dfdfdf;
+      color: #111;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .start { width: 210px; padding: 0 24px; gap: 16px; }
+    .start img { width: 42px; image-rendering: pixelated; }
+    .task { width: 660px; padding: 0 28px; gap: 18px; }
+    .task img { width: 38px; image-rendering: pixelated; }
+    .tray {
+      margin-left: auto;
+      width: 300px;
+      justify-content: center;
+      box-shadow: inset -3px -3px #fff, inset 3px 3px grey;
+      font-size: 25px;
+      letter-spacing: .08em;
+    }
+  </style>
+</head>
+<body>
+  <main class="shot" id="zh-05">
+    <div class="desktop-meta"><span>扫雷 98经典</span><span>05 · 再来一局</span></div>
+
+    <div class="desktop-icon">
+      <img src="../../../../Resources/RetroAssets/app-icon-16.png" alt="">
+      <span>扫雷</span>
+    </div>
+
+    <div class="window-position">
+      <section class="window dialog-window">
+        <div class="title-bar">
+          <div class="title-bar-text">Minesweeper — New Game</div>
+          <div class="title-bar-controls"><button aria-label="Close"></button></div>
+        </div>
+        <div class="window-body">
+          <div class="sunken-panel cta-panel">
+            <div class="smiley-wrap"><img class="smiley" src="../../../../Resources/RetroAssets/face-neutral.png" alt=""></div>
+            <div class="copy">
+              <p class="eyebrow">READY WHEN YOU ARE</p>
+              <h1>要不要<br>来一局？</h1>
+              <p class="sub">熟悉的笑脸已经准备好了。打开游戏，继续扫雷。</p>
+            </div>
+            <div class="choice">
+              <span class="hint">选择接下来做什么</span>
+              <div class="buttons"><button>下次再说</button><button class="default">开始</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field">完全离线</p>
+          <p class="status-bar-field">无广告</p>
+          <p class="status-bar-field">原生 MAC 应用</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="taskbar">
+      <div class="start"><img src="../../../../Resources/RetroAssets/app-icon-16.png" alt=""><span>Start</span></div>
+      <div class="task"><img src="../../../../Resources/RetroAssets/face-neutral-full.png" alt=""><span>扫雷 98经典</span></div>
+      <div class="tray">就绪 · 05 / 05</div>
+    </div>
+  </main>
+</body>
+</html>

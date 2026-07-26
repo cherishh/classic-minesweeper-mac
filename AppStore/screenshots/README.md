@@ -1,10 +1,10 @@
 # Screenshot production
 
-> Status: the complete bilingual five-image preview is under `candidates/full-preview-v6/` and is ready for visual approval. Do not upload it before approval.
+> Status: the latest complete bilingual five-image preview is under `candidates/full-preview-v7/` and is ready for visual approval. Do not upload it before approval.
 
 ## Replacement candidate
 
-`candidates/full-preview-v6/` contains the current ordered English and Simplified Chinese sets, plus one contact sheet per localization. Both sequences contain five images: Beginner cover, failure, victory, open menu, and CTA. The former dedicated Expert page is removed.
+`candidates/full-preview-v7/` contains the current ordered English and Simplified Chinese sets, plus one contact sheet per localization. Both sequences contain five images: Beginner cover, failure, victory, open menu, and CTA. Chinese pages 02 and 04 use the latest approved wording, and both localizations now finish with Windows 98-themed CTAs. The former dedicated Expert page is removed.
 
 The preferred Chinese candidates are `candidates/editorial-set-v4/zh-Hans/01.png` and `05.png`. The first image adapts the supplied portrait artwork into the required 16:10 format without a teal presentation frame and uses a real Beginner state with one flag placed. The fifth image replaces both the former Expert page and the old feature-summary ending with a smiley-led CTA.
 

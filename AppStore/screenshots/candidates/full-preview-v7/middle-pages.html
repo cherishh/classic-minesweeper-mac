@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Minesweeper Classic: 98 — full preview middle pages</title>
+  <style>
+    :root {
+      --teal: #008080;
+      --teal-dark: #006a6a;
+      --navy: #000080;
+      --silver: #c0c0c0;
+      --white: #f7f7f2;
+      --orange: #ff5f35;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #111; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif; }
+    .shot {
+      position: relative;
+      width: 2880px;
+      height: 1800px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(135deg, var(--teal) 0%, var(--teal) 62%, var(--teal-dark) 100%);
+      background-size: 48px 48px, 48px 48px, 100% 100%;
+    }
+    .shot::after {
+      content: "98";
+      position: absolute;
+      z-index: 0;
+      right: -80px;
+      bottom: -270px;
+      font-size: 1040px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.12em;
+      color: rgba(0,0,128,.14);
+    }
+    .chrome {
+      position: absolute;
+      z-index: 10;
+      left: 150px;
+      right: 150px;
+      top: 96px;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,.8);
+      font: 700 27px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .chrome::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 58px;
+      height: 2px;
+      background: rgba(255,255,255,.35);
+    }
+    .copy {
+      position: absolute;
+      z-index: 4;
+      left: 150px;
+      top: 330px;
+      width: 1220px;
+    }
+    .eyebrow {
+      margin: 0 0 36px;
+      color: #d8ffff;
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .mark {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-right: 18px;
+      background: var(--orange);
+      box-shadow: 7px 7px 0 var(--navy);
+    }
+    h1 {
+      margin: 0;
+      font-size: 122px;
+      font-weight: 760;
+      line-height: .99;
+      letter-spacing: -.055em;
+      text-wrap: balance;
+    }
+    .sub {
+      max-width: 1050px;
+      margin: 42px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: 40px;
+      font-weight: 460;
+      line-height: 1.35;
+      text-wrap: balance;
+    }
+    .zh h1 { font-size: 112px; line-height: 1.04; letter-spacing: -.045em; }
+    .zh .sub { font-size: 40px; }
+    .product {
+      position: absolute;
+      z-index: 3;
+      image-rendering: pixelated;
+      filter: drop-shadow(30px 36px 0 rgba(0,0,0,.30));
+    }
+    .card {
+      position: absolute;
+      z-index: 2;
+      background: var(--silver);
+      box-shadow: 26px 30px 0 rgba(0,0,0,.25), inset 5px 5px #fff, inset -5px -5px #727272;
+    }
+    .page-number {
+      position: absolute;
+      z-index: 9;
+      right: 150px;
+      bottom: 105px;
+      color: rgba(255,255,255,.72);
+      font: 700 28px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .1em;
+    }
+
+    .hero .copy { top: 330px; width: 1240px; }
+    .hero h1 { font-size: 132px; }
+    .hero .card,
+    .failure .card { right: 270px; top: 240px; width: 900px; height: 1370px; }
+    .hero .product,
+    .failure .product { right: 325px; top: 285px; width: 790px; }
+
+    .record .copy { top: 330px; width: 1200px; }
+    .record .board-card { right: 140px; top: 270px; width: 1390px; height: 1300px; overflow: hidden; }
+    .record .board { right: 245px; top: 330px; width: 1110px; opacity: .88; }
+    .record .dialog { right: 85px; top: 630px; width: 1390px; filter: drop-shadow(34px 40px 0 rgba(0,0,0,.34)); }
+
+    .menu .copy { top: 315px; width: 1190px; }
+    .menu-stack { position: absolute; z-index: 3; right: 230px; top: 230px; width: 1050px; height: 1420px; }
+    .menu-stack .top { position: absolute; left: 55px; top: 0; width: 840px; image-rendering: pixelated; filter: drop-shadow(24px 30px 0 rgba(0,0,0,.27)); }
+    .menu-stack .panel { position: absolute; left: 90px; top: 210px; width: 940px; image-rendering: pixelated; filter: drop-shadow(24px 30px 0 rgba(0,0,0,.27)); }
+  </style>
+</head>
+<body>
+  <main class="shot hero" id="en-01">
+    <div class="chrome"><span>Minesweeper Classic: 98</span><span>macOS · 01</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>Original rules · Native Mac app</p><h1>The classic, exactly where you left it.</h1><p class="sub">Beginner to Custom. Pixel-perfect and ready to play.</p></div>
+    <div class="card"></div><img class="product" src="../../source/beginner-one-flag-large.png" alt="">
+    <div class="page-number">01 / 05</div>
+  </main>
+
+  <main class="shot failure" id="en-02">
+    <div class="chrome"><span>Minesweeper Classic: 98</span><span>macOS · 02</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>Game over</p><h1>One wrong square. Same old face.</h1><p class="sub">The missed square turns red. Every mine is revealed.</p></div>
+    <div class="card"></div><img class="product" src="../../../../local-tests/appstore-screenshots-v2/assets/lose.png" alt="">
+    <div class="page-number">02 / 05</div>
+  </main>
+
+  <main class="shot record" id="en-03">
+    <div class="chrome"><span>Minesweeper Classic: 98</span><span>macOS · 03</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>Best times</p><h1>Beat the clock. Get the classic popup.</h1><p class="sub">Best times for every level stay on this Mac.</p></div>
+    <div class="card board-card"></div><img class="product board" src="../../source/beginner-playing-large.png" alt=""><img class="product dialog" src="../../../../local-tests/appstore-screenshots-v2/assets/win-dialog.png" alt="">
+    <div class="page-number">03 / 05</div>
+  </main>
+
+  <main class="shot menu" id="en-04">
+    <div class="chrome"><span>Minesweeper Classic: 98</span><span>macOS · 04</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>Classic options</p><h1>Every option, right where you remember it.</h1><p class="sub">F2, three levels, Custom, Marks, Color, and Window Size.</p></div>
+    <div class="menu-stack"><img class="top" src="../../../../local-tests/appstore-screenshots-v2/assets/menu-app-top.png" alt=""><img class="panel" src="../../../../local-tests/appstore-screenshots-v2/assets/menu-panel.png" alt=""></div>
+    <div class="page-number">04 / 05</div>
+  </main>
+
+  <main class="shot failure zh" id="zh-02">
+    <div class="chrome"><span>扫雷 98经典</span><span>macOS · 02</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>原汁原味</p><h1>原汁原味的 Win98 窗口元素</h1><p class="sub">蓝色标题栏、立体按钮和熟悉的哭脸，一样不少。</p></div>
+    <div class="card"></div><img class="product" src="../../../../local-tests/appstore-screenshots-v2/assets/lose.png" alt="">
+    <div class="page-number">02 / 05</div>
+  </main>
+
+  <main class="shot record zh" id="zh-03">
+    <div class="chrome"><span>扫雷 98经典</span><span>macOS · 03</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>最快纪录</p><h1>破纪录时，连弹窗都没变。</h1><p class="sub">初级、中级、高级最好成绩，分别保存在本机。</p></div>
+    <div class="card board-card"></div><img class="product board" src="../../source/beginner-playing-large.png" alt=""><img class="product dialog" src="../../../../local-tests/appstore-screenshots-v2/assets/win-dialog.png" alt="">
+    <div class="page-number">03 / 05</div>
+  </main>
+
+  <main class="shot menu zh" id="zh-04">
+    <div class="chrome"><span>扫雷 98经典</span><span>macOS · 04</span></div>
+    <div class="copy"><p class="eyebrow"><span class="mark"></span>像素细节</p><h1>特别还原锯齿状文字，感受那年的夏天</h1><p class="sub">经典像素字体与菜单选项，完整保留。</p></div>
+    <div class="menu-stack"><img class="top" src="../../../../local-tests/appstore-screenshots-v2/assets/menu-app-top.png" alt=""><img class="panel" src="../../../../local-tests/appstore-screenshots-v2/assets/menu-panel.png" alt=""></div>
+    <div class="page-number">04 / 05</div>
+  </main>
+</body>
+</html>
