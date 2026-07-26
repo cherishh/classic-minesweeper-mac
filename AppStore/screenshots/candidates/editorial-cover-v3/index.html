@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>扫雷 98经典 — 中文商店首图</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #111; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif; }
+    .shot {
+      position: relative;
+      width: 2880px;
+      height: 1800px;
+      overflow: hidden;
+      color: #0b0b0b;
+      background: #f7f7f4;
+    }
+    .meta {
+      position: absolute;
+      left: 170px;
+      right: 170px;
+      top: 116px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 45px;
+      border-bottom: 2px solid #d3d3ce;
+      color: #777773;
+      font: 500 27px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .22em;
+    }
+    .copy {
+      position: absolute;
+      z-index: 3;
+      left: 170px;
+      top: 350px;
+      width: 1320px;
+    }
+    .eyebrow {
+      margin: 0 0 48px;
+      color: #ff5f35;
+      font-size: 35px;
+      font-weight: 650;
+      letter-spacing: .09em;
+    }
+    h1 {
+      margin: 0;
+      font-size: 190px;
+      font-weight: 300;
+      line-height: 1.03;
+      letter-spacing: -.06em;
+    }
+    .visual {
+      position: absolute;
+      z-index: 1;
+      right: 115px;
+      bottom: 80px;
+      width: 1240px;
+      height: 1410px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(50,50,50,.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(50,50,50,.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.82), rgba(255,255,255,.35));
+      background-size: 96px 96px, 96px 96px, 100% 100%;
+    }
+    .visual::before {
+      content: "";
+      position: absolute;
+      right: -230px;
+      bottom: -310px;
+      width: 1050px;
+      height: 1050px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255,95,53,.95) 0 6px, transparent 7px) 0 0 / 24px 24px,
+        linear-gradient(135deg, transparent 24%, rgba(255,95,53,.14) 68%, rgba(0,0,0,.62));
+      opacity: .96;
+    }
+    .visual::after {
+      content: "";
+      position: absolute;
+      left: -165px;
+      bottom: -210px;
+      width: 720px;
+      height: 720px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,0,0,.72) 0 3px, transparent 4px) 0 0 / 18px 18px;
+      opacity: .65;
+    }
+    .product-mat {
+      position: absolute;
+      z-index: 2;
+      left: 245px;
+      top: 120px;
+      width: 780px;
+      height: 1182px;
+      padding: 40px;
+      background: rgba(255,255,255,.96);
+      box-shadow: 28px 34px 0 rgba(0,0,0,.15);
+    }
+    .product {
+      display: block;
+      width: 700px;
+      height: auto;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <main class="shot" id="zh-cover">
+    <div class="meta"><span>GAME · MAC APP</span><span>2026 · FREE</span></div>
+    <section class="copy">
+      <p class="eyebrow">开源 · APPLE SILICON</p>
+      <h1>把 Win98<br>扫雷<br>搬到 Mac</h1>
+    </section>
+    <section class="visual" aria-hidden="true">
+      <div class="product-mat">
+        <img class="product" src="../../source/beginner-ready-large.png" alt="">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

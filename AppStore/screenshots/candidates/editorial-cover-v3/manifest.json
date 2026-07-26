@@ -1,0 +1,13 @@
+{
+  "status": "candidate",
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "aspectRatio": "16:10",
+  "alpha": false,
+  "localization": "zh-Hans",
+  "files": ["zh-Hans/01.png"],
+  "productState": "Beginner ready, 10 mines",
+  "sourceArtwork": "local-tests/xhs-winmine98/output/xhs-01-cover.png",
+  "sourceCapture": "AppStore/screenshots/source/beginner-ready-large.png"
+}
