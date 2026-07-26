@@ -1,0 +1,14 @@
+{
+  "status": "candidate",
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "aspectRatio": "16:10",
+  "alpha": false,
+  "localization": "en-US",
+  "finalSequenceLength": 5,
+  "files": ["en-US/05.png"],
+  "removedPage": "advanced-mode",
+  "theme": "Windows 98 desktop and dialog",
+  "cta": "One more round?"
+}

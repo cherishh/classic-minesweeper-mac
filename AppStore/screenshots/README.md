@@ -6,6 +6,8 @@
 
 The preferred Chinese candidates are `candidates/editorial-set-v4/zh-Hans/01.png` and `05.png`. The first image adapts the supplied portrait artwork into the required 16:10 format without a teal presentation frame and uses a real Beginner state with one flag placed. The fifth image replaces both the former Expert page and the old feature-summary ending with a smiley-led CTA.
 
+The preferred English ending is `candidates/win98-cta-v5/en-US/05.png`. It uses a dedicated Windows 98 desktop, dialog, and taskbar treatment rather than the Chinese cover’s off-white editorial direction. The English sequence also omits the former dedicated Expert page and ends at 05 of 05.
+
 The replacement set uses modern, high-contrast marketing typography over the classic Windows desktop teal. The app itself remains pixel-authentic and is shown in the requested failure, victory, and open-menu states.
 
 - `candidates/modern-teal-v2/en-US/`: ordered English set.
