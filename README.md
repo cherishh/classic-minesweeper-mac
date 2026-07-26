@@ -1,8 +1,11 @@
-# WinMine 98 for macOS
+# Classic Minesweeper for macOS
 
-A native Apple Silicon recreation of the Windows 98 edition of Minesweeper.
+A native recreation of the classic desktop edition of Minesweeper.
 
 Requires **macOS 13+** and **Apple Silicon** (M1 / M2 / M3 / M4…).
+
+[Support](https://cherishh.github.io/classic-minesweeper-mac/support.html) ·
+[Privacy](https://cherishh.github.io/classic-minesweeper-mac/privacy.html)
 
 ## Download & open（下载与运行）
 
@@ -47,5 +50,11 @@ chrome remains faithful to Windows 98 rather than adopting macOS window styling.
 ```
 
 Output: `dist/Minesweeper.app`. Needs macOS 13+, Apple Silicon, and Xcode CLT.
+
+For the Mac App Store archive, open `ClassicMinesweeper.xcodeproj` in Xcode or run:
+
+```sh
+./scripts/archive-app-store.sh
+```
 
 Created by [tuxi](https://tuxi.dev).

@@ -1,0 +1,29 @@
+# Screenshot sources and provenance
+
+## Product captures
+
+The interface images in `source/` were captured from the Debug build of the same `WinMine98` Xcode app target used for the Release archive. Capture-only state selection is compiled under `#if DEBUG`; it changes the starting board and window scale but does not replace or redraw the shipping UI.
+
+- `beginner-ready-large.png`: real Beginner board, Large interface scale.
+- `beginner-playing-large.png`: real Beginner board after valid reveal and mark actions.
+- `intermediate-ready-large.png`: real Intermediate board, Large interface scale.
+- `intermediate-playing-large.png`: real Intermediate board after valid reveal and mark actions.
+- `expert-ready-large.png`: real Expert board, Large interface scale.
+- `expert-playing-large.png`: real Expert board after valid reveal and mark actions.
+
+## Presentation system
+
+- Background: solid `#008080`, the familiar default desktop teal.
+- UI framing: `98.css` 0.1.21 by Jordan Scales and contributors, MIT License.
+- Upstream repository: https://github.com/jdan/98.css
+- Upstream HEAD checked during production: `b1d7a907371bbe523d6f64e3af97f714fdbd6d6a`.
+- Export copy, placement, and dimensions are deterministic HTML/CSS compositions rendered with Playwright.
+
+## Generated explorations not used
+
+Two ImageGen background explorations are retained in `source/generated-teal-grid.png` and `source/generated-editorial-grid.png`. Neither appears in the final exports after the decision to use solid `#008080` throughout.
+
+Prompts:
+
+1. Deep teal, late-1990s desktop-inspired empty backdrop with a subtle pixel grid; no UI, devices, logos, text, or branding.
+2. Warm off-white editorial grid backdrop with small abstract red and cobalt accents; no UI, devices, logos, text, or branding.

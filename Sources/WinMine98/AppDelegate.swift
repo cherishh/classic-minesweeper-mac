@@ -1,6 +1,16 @@
 import AppKit
 import CoreText
 
+enum AppLinks {
+    static let privacy = URL(string: "https://cherishh.github.io/classic-minesweeper-mac/privacy.html")!
+    static let support = URL(string: "https://cherishh.github.io/classic-minesweeper-mac/support.html")!
+    static let website = URL(string: "https://github.com/cherishh/classic-minesweeper-mac")!
+}
+
+final class RetroMainWindow: NSWindow {
+    override var canBecomeKey: Bool { true }
+}
+
 @MainActor
 private final class ScaledGameContainerView: NSView {
     let gameView: WinMineView
@@ -40,6 +50,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSApp.setActivationPolicy(.regular)
         configureMainMenu()
 
+        #if DEBUG
+        configureCaptureModelIfNeeded()
+        #endif
+
         let view = WinMineView(model: model)
         let logicalSize = view.preferredSize
         let size = scaledSize(logicalSize, by: view.windowSizePreset.scale)
@@ -48,7 +62,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             x: floor(screen.midX - size.width / 2),
             y: floor(screen.midY - size.height / 2)
         )
-        let window = NSWindow(
+        let window = RetroMainWindow(
             contentRect: NSRect(origin: origin, size: size),
             styleMask: [.borderless, .miniaturizable],
             backing: .buffered,
@@ -63,7 +77,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.delegate = self
         window.contentView = container
         container.refreshLogicalSize()
-        window.title = "Minesweeper"
+        window.title = "Classic Minesweeper"
         window.makeKeyAndOrderFront(nil)
         window.makeFirstResponder(view)
 
@@ -78,6 +92,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         self.gameContainer = container
 
         NSApp.activate(ignoringOtherApps: true)
+
+        #if DEBUG
+        view.showCaptureOverlayIfNeeded()
+        #endif
     }
 
     private func registerPixelFonts() {
@@ -130,15 +148,73 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         NSSize(width: size.width * scale, height: size.height * scale)
     }
 
+    #if DEBUG
+    private func configureCaptureModelIfNeeded() {
+        guard let state = ProcessInfo.processInfo.environment["CLASSIC_MINES_CAPTURE_STATE"] else {
+            return
+        }
+
+        if state.hasPrefix("expert") {
+            model.newGame(.expert)
+        } else if state.hasPrefix("intermediate") {
+            model.newGame(.intermediate)
+        } else {
+            model.newGame(.beginner)
+        }
+
+        guard state.hasSuffix("playing") else { return }
+        let center = model.index(column: model.width / 2, row: model.height / 2) ?? 0
+        model.reveal(at: center)
+        let additionalOpenings = model.cells.indices.filter {
+            !model.cells[$0].hasMine
+                && !model.cells[$0].revealed
+                && model.cells[$0].adjacentMines == 0
+        }
+        for index in additionalOpenings.prefix(2) {
+            model.reveal(at: index)
+        }
+        for index in model.cells.indices where !model.cells[index].revealed {
+            model.toggleMark(at: index)
+            if model.flagCount == min(5, model.mineCount) { break }
+        }
+    }
+    #endif
+
     private func configureMainMenu() {
         let mainMenu = NSMenu()
         let appItem = NSMenuItem()
         mainMenu.addItem(appItem)
         let appMenu = NSMenu()
-        appMenu.addItem(withTitle: "About Minesweeper", action: nil, keyEquivalent: "")
+        appMenu.addItem(menuItem(title: "About Classic Minesweeper", action: #selector(showAboutPanel)))
+        appMenu.addItem(menuItem(title: "Privacy Policy", action: #selector(openPrivacyPolicy)))
+        appMenu.addItem(menuItem(title: "Support", action: #selector(openSupport)))
         appMenu.addItem(.separator())
-        appMenu.addItem(withTitle: "Quit Minesweeper", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: "Quit Classic Minesweeper", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appItem.submenu = appMenu
         NSApp.mainMenu = mainMenu
+    }
+
+    private func menuItem(title: String, action: Selector) -> NSMenuItem {
+        let item = NSMenuItem(title: title, action: action, keyEquivalent: "")
+        item.target = self
+        return item
+    }
+
+    @objc private func showAboutPanel() {
+        NSApp.orderFrontStandardAboutPanel(options: [
+            .applicationName: "Classic Minesweeper",
+            .credits: NSAttributedString(
+                string: "A native recreation of the classic desktop puzzle.\nCreated by tuxi.",
+                attributes: [.font: NSFont.systemFont(ofSize: 11)]
+            )
+        ])
+    }
+
+    @objc private func openPrivacyPolicy() {
+        NSWorkspace.shared.open(AppLinks.privacy)
+    }
+
+    @objc private func openSupport() {
+        NSWorkspace.shared.open(AppLinks.support)
     }
 }

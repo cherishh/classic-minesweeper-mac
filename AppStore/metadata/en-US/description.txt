@@ -1,0 +1,19 @@
+The Minesweeper you remember, rebuilt as a native Mac app.
+
+Classic Minesweeper brings back the focused desktop puzzle experience: the familiar layout, precise pixel artwork, instant controls, and nothing between you and the next board.
+
+CLASSIC GAMEPLAY
+• Beginner, Intermediate, and Expert boards
+• Custom boards up to 30 × 24
+• First-click safety
+• Flags, question marks, and chord controls
+• Best-time records for every standard difficulty
+
+MADE FOR MAC
+• Native AppKit performance
+• Crisp scaling at three interface sizes
+• Mouse-first controls, including right and middle click
+• F2 starts a new game instantly
+• Fully offline, with no accounts, ads, analytics, or tracking
+
+Open a square. Read the field. Trust the flag. Clear the board.

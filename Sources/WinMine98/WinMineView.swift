@@ -84,7 +84,15 @@ final class WinMineView: NSView {
     init(model: GameModel) {
         self.model = model
         let savedPreset = UserDefaults.standard.string(forKey: WindowSizePreset.defaultsKey)
-        self.windowSizePreset = savedPreset.flatMap(WindowSizePreset.init(rawValue:)) ?? .medium
+        #if DEBUG
+        let capturePreset = ProcessInfo.processInfo.environment["CLASSIC_MINES_CAPTURE_SCALE"]
+            .flatMap(WindowSizePreset.init(rawValue:))
+        #else
+        let capturePreset: WindowSizePreset? = nil
+        #endif
+        self.windowSizePreset = capturePreset
+            ?? savedPreset.flatMap(WindowSizePreset.init(rawValue:))
+            ?? .medium
         super.init(frame: .zero)
         model.onChange = { [weak self] in
             self?.needsDisplay = true
@@ -511,7 +519,14 @@ final class WinMineView: NSView {
     private func showHelpMenu() {
         closeMenu()
         let items = [
-            RetroMenuItem(title: "About...", action: { [weak self] in self?.showAbout() })
+            RetroMenuItem(title: "About...", action: { [weak self] in self?.showAbout() }),
+            .line(),
+            RetroMenuItem(title: "Privacy Policy", action: {
+                NSWorkspace.shared.open(AppLinks.privacy)
+            }),
+            RetroMenuItem(title: "Support", action: {
+                NSWorkspace.shared.open(AppLinks.support)
+            })
         ]
         showMenu(items: items, under: helpMenuRect, width: 185)
     }
@@ -591,16 +606,28 @@ final class WinMineView: NSView {
     private func showAbout() {
         let content = MessageDialogView(frame: .zero)
         content.lines = [
-            "Minesweeper",
-            "Windows 98 edition for macOS",
+            "Classic Minesweeper",
+            "The classic desktop game for macOS.",
             "A pixel-faithful native recreation.",
             "tuxi · https://tuxi.dev"
         ]
         content.linkLineIndex = 3
         content.linkText = "https://tuxi.dev"
         content.linkURL = URL(string: "https://tuxi.dev")
-        showDialog(title: "About Minesweeper", size: NSSize(width: 320, height: 162), content: content)
+        showDialog(title: "About Classic Minesweeper", size: NSSize(width: 320, height: 162), content: content)
     }
+
+    #if DEBUG
+    func showCaptureOverlayIfNeeded() {
+        switch ProcessInfo.processInfo.environment["CLASSIC_MINES_CAPTURE_OVERLAY"] {
+        case "game-menu": showGameMenu()
+        case "best-times": showBestTimes()
+        case "custom": showCustomDialog()
+        case "about": showAbout()
+        default: break
+        }
+    }
+    #endif
 
     private func showDialog(title: String, size: NSSize, content: RetroDialogView) {
         dismissDialog()

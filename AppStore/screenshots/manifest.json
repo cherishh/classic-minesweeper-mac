@@ -1,0 +1,27 @@
+{
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "format": "PNG",
+  "alpha": false,
+  "background": "#008080",
+  "submissionOrder": [
+    "exports/en-US/01-pixel-for-pixel.png",
+    "exports/en-US/02-every-board.png",
+    "exports/en-US/03-familiar-controls.png",
+    "exports/en-US/04-no-distractions.png",
+    "exports/en-US/05-expert-mode.png",
+    "exports/en-US/06-native-scaling.png"
+  ],
+  "alternatives": [
+    "exports/alternatives/direction-01.png",
+    "exports/alternatives/direction-02.png",
+    "exports/alternatives/direction-03.png",
+    "exports/alternatives/direction-04.png",
+    "exports/alternatives/direction-05.png",
+    "exports/alternatives/direction-06.png"
+  ],
+  "productCapture": "Real Xcode app target",
+  "presentationFramework": "jdan/98.css 0.1.21",
+  "presentationFrameworkLicense": "MIT"
+}

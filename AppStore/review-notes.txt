@@ -1,0 +1,10 @@
+Classic Minesweeper is a self-contained, offline puzzle game. It requires no account, network connection, purchase, or special hardware.
+
+To test:
+1. Launch the app and left-click any square. The first click is always safe.
+2. Right-click a covered square to cycle through flag, question mark, and unmarked states.
+3. Choose Game → Intermediate or Expert to test other board sizes.
+4. Choose Game → Window Size to test interface scaling.
+5. Press F2 to start a new game.
+
+The app stores only local preferences and best times in UserDefaults. It contains no analytics, ads, third-party SDKs, or data collection. Privacy and Support links are available from both the macOS application menu and the in-game Help menu.

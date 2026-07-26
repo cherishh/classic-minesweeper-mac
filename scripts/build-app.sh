@@ -29,6 +29,9 @@ zip_path="$project_dir/dist/Minesweeper.zip"
 arch="${ARCH:-arm64}"
 notarize="${NOTARIZE:-0}"
 notary_profile="${NOTARY_PROFILE:-}"
+bundle_id="${BUNDLE_ID:-dev.tuxi.classicminesweeper}"
+marketing_version="${MARKETING_VERSION:-1.0}"
+build_number="${BUILD_NUMBER:-1}"
 
 cd "$project_dir"
 
@@ -100,6 +103,12 @@ cp "$project_dir/Resources/AlexAegis-Minesweeper-LICENSE.txt" "$resources_dir/Al
 cp "$project_dir/Resources/PixelatedMSSansSerif-LICENSE.txt" "$resources_dir/PixelatedMSSansSerif-LICENSE.txt"
 cp "$project_dir/Resources/PixelatedMSSansSerifBold-LICENSE.txt" "$resources_dir/PixelatedMSSansSerifBold-LICENSE.txt"
 cp "$project_dir/Resources/Info.plist" "$contents_dir/Info.plist"
+plist_buddy=/usr/libexec/PlistBuddy
+"$plist_buddy" -c "Set :CFBundleExecutable Minesweeper" "$contents_dir/Info.plist"
+"$plist_buddy" -c "Set :CFBundleIdentifier $bundle_id" "$contents_dir/Info.plist"
+"$plist_buddy" -c "Set :CFBundleShortVersionString $marketing_version" "$contents_dir/Info.plist"
+"$plist_buddy" -c "Set :CFBundleVersion $build_number" "$contents_dir/Info.plist"
+cp "$project_dir/Resources/PrivacyInfo.xcprivacy" "$resources_dir/PrivacyInfo.xcprivacy"
 mkdir -p "$resources_dir/RetroAssets"
 cp "$project_dir/Resources/RetroAssets/"*.png "$resources_dir/RetroAssets/"
 mkdir -p "$resources_dir/Fonts"
