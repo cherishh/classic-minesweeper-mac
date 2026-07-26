@@ -1,6 +1,6 @@
 # Full preview v7
 
-- English images are unchanged from `full-preview-v6`.
+- English 03 mirrors the Chinese functional-product claim with `Every feature actually works.`
 - Chinese 02 uses the requested `原汁原味的 Win98 窗口元素` headline.
 - Chinese 03 uses the requested `所有功能均真实可用` headline.
 - Chinese 04 uses the requested `特别还原锯齿状文字，感受那年的夏天` headline.
