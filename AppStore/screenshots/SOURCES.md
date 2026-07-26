@@ -2,10 +2,11 @@
 
 ## Product captures
 
-The interface images in `source/` were captured from the Debug build of the same `WinMine98` Xcode app target used for the Release archive. Capture-only state selection is compiled under `#if DEBUG`; it changes the starting board and window scale but does not replace or redraw the shipping UI.
+The interface images in `source/` were captured from the same `WinMine98` AppKit target used for the Release archive. Most use Debug-only starting-state selection; the one-flag image was captured by interacting with the packaged app directly. Neither route replaces or redraws the shipping UI.
 
 - `beginner-ready-large.png`: real Beginner board, Large interface scale.
 - `beginner-playing-large.png`: real Beginner board after valid reveal and mark actions.
+- `beginner-one-flag-large.png`: packaged app in a real Beginner state with one flag placed and `009` mines remaining, Large interface scale.
 - `intermediate-ready-large.png`: real Intermediate board, Large interface scale.
 - `intermediate-playing-large.png`: real Intermediate board after valid reveal and mark actions.
 - `expert-ready-large.png`: real Expert board, Large interface scale.

@@ -1,0 +1,15 @@
+{
+  "status": "partial-candidate",
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "aspectRatio": "16:10",
+  "alpha": false,
+  "localization": "zh-Hans",
+  "finalSequenceLength": 5,
+  "files": ["zh-Hans/01.png", "zh-Hans/05.png"],
+  "pendingCopyPages": ["02", "03", "04"],
+  "removedPage": "advanced-mode",
+  "coverProductState": "Beginner ready with one flag, 9 mines remaining",
+  "cta": "smiley-led original composition"
+}

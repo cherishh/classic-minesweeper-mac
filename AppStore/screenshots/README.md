@@ -1,10 +1,10 @@
 # Screenshot production
 
-> Status: the original draft is rejected. The Chinese first-image replacement under `candidates/editorial-cover-v3/` is ready for visual approval. The remaining `modern-teal-v2` images are awaiting copy revision. Do not upload either candidate set before approval.
+> Status: the original draft is rejected. The preferred Chinese first and last images are under `candidates/editorial-set-v4/`. Pages 02–04 are awaiting copy selection, and the former dedicated Expert page is removed. Do not upload the candidate set before approval.
 
 ## Replacement candidate
 
-The preferred Chinese first-image candidate is `candidates/editorial-cover-v3/zh-Hans/01.png`. It adapts the supplied portrait artwork into the required 16:10 format without a teal presentation frame and uses the real default Beginner 10-mine state.
+The preferred Chinese candidates are `candidates/editorial-set-v4/zh-Hans/01.png` and `05.png`. The first image adapts the supplied portrait artwork into the required 16:10 format without a teal presentation frame and uses a real Beginner state with one flag placed. The fifth image replaces both the former Expert page and the old feature-summary ending with a smiley-led CTA.
 
 The replacement set uses modern, high-contrast marketing typography over the classic Windows desktop teal. The app itself remains pixel-authentic and is shown in the requested failure, victory, and open-menu states.
 
