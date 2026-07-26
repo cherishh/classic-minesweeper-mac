@@ -1,10 +1,23 @@
 # Screenshot production
 
-> Status: draft rejected on 2026-07-26. Do not submit this set for review; it remains only as source material for the next visual pass.
+> Status: the original draft is rejected. The replacement set under `candidates/modern-teal-v2/` is ready for visual approval and must not be uploaded before approval.
+
+## Replacement candidate
+
+The replacement set uses modern, high-contrast marketing typography over the classic Windows desktop teal. The app itself remains pixel-authentic and is shown in the requested failure, victory, and open-menu states.
+
+- `candidates/modern-teal-v2/en-US/`: ordered English set.
+- `candidates/modern-teal-v2/zh-Hans/`: ordered Simplified Chinese set.
+- `candidates/modern-teal-v2/alternatives/`: first-image alternatives.
+- `candidates/modern-teal-v2/*-contact-sheet.png`: review sheets.
+
+The Chinese first image embeds the supplied `xhs-01-cover.png` artwork intact. All candidate exports are 2880 × 1800 RGB PNGs with no alpha channel.
+
+## Rejected original draft
 
 Final exports are 2880 × 1800 PNG files with no alpha channel. Every app interface shown in an export comes from a real capture of the Xcode app target. Marketing copy and the `#008080` default desktop background are composited deterministically.
 
-## Recommended submission set
+### Original recommendation
 
 The six ordered images in `exports/en-US/` form one coherent set:
 

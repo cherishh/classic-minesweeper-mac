@@ -1,0 +1,18 @@
+{
+  "status": "candidate",
+  "platform": "macOS",
+  "width": 2880,
+  "height": 1800,
+  "aspectRatio": "16:10",
+  "alpha": false,
+  "localizations": {
+    "en-US": ["01.png", "02.png", "03.png", "04.png", "05.png", "06.png"],
+    "zh-Hans": ["01.png", "02.png", "03.png", "04.png", "05.png", "06.png"]
+  },
+  "requiredStates": {
+    "failure": "02.png",
+    "victory": "03.png",
+    "openMenu": "04.png"
+  },
+  "alternatives": ["alt-en-01.png", "alt-zh-01.png"]
+}
